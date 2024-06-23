@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Employee Management System Feedback Form</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="feedback.css">
+</head>
+<body>
+
+<nav>
+  <div class="logo">
+    <p>DevLeaf</p>
+  </div>
+  <ul class="nav-links">
+    <li><a href="index.html" class="active">Dashboard</a></li>
+    <li>
+      <a href="#">Employee</a>
+      <ul class="sub-menu">
+        <li><a href="payroll.html">Payroll</a></li>
+        <li><a href="attendance.html">Attendance</a></li>
+        <li><a href="leave.html">Leave</a></li>
+        <li><a href="loanrequest.html">Loan Request</a></li>
+      </ul>
+    </li>
+    <li><a href="feedback.html">Feedback</a></li>
+    <li><a href="profile.html">Profile</a></li>
+  </ul>
+  <div class="signin-button">
+    <button>Admin</button>
+  </div>
+</nav>
+
+<div class="container">
+  <h2>Employee Management System Feedback</h2>
+  <form id="feedback-form">
+    <label for="employee-name">Employee Name:</label><br>
+    <input type="text" id="employee-name" name="employee-name" required><br><br>
+    
+    <label for="register-number">Register Number:</label><br>
+    <input type="text" id="register-number" name="register-number" required><br><br>
+    
+    <label for="feedback-type">Feedback Type:</label><br>
+    <select id="feedback-type" name="feedback-type" required>
+      <option value="Suggestion">Suggestion</option>
+      <option value="Complaint">Complaint</option>
+      <option value="Appreciation">Appreciation</option>
+    </select><br><br>
+    
+    <label for="feedback-message">Feedback Message:</label><br>
+    <textarea id="feedback-message" name="feedback-message" rows="4" cols="50" required></textarea><br><br>
+    
+    <button type="submit">Submit Feedback</button>
+  </form>
+</div>
+
+<script src="feedback.js"></script>
+</body>
+</html>

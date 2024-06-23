@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/64d58efce2.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="login.css" />
+    <title>Sign in & Sign up Form</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="forms-container">
+        <div class="signin-signup">
+          <form id="sign-in-form" action="#" class="sign-in-form">
+            <h2 class="title">Sign in</h2>
+            <div class="input-field">
+              <i class="fas fa-user"></i>
+              <input type="text" id="email" name="email" placeholder="Email" />
+            </div>
+            <div class="input-field">
+              <i class="fas fa-lock"></i>
+              <input type="password" id="password" name="password" placeholder="Password" />
+            </div>
+            <input type="submit" value="Login" class="btn solid" />
+            <p class="social-text">Or Sign in with social platforms</p>
+            <div class="social-media">
+              <a href="#" class="social-icon">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="#" class="social-icon">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a href="#" class="social-icon">
+                <i class="fab fa-google"></i>
+              </a>
+              <a href="#" class="social-icon">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+            </div>
+          </form>          
+        </div>
+      </div>
+
+      <div class="panels-container">
+        <div class="panel left-panel">
+          <div class="content">
+            <h3>One of us ?</h3>
+            <p>
+              "Welcome Soldier! We're Excited to Have You Here!"
+            </p>
+          </div>
+          <img src="img/log.svg" class="image" alt="" />
+        </div>
+      </div>
+    </div>
+    
+
+    <script src="app.js"></script>
+    <script type="module">
+      
+// Firebase Configuration and Initialization
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import { getDatabase } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
+import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+
+// Firebase Configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyAY0610GUBHYsUZwvO_UI5DgapIBaQ5STE",
+  authDomain: "placement-project-ff996.firebaseapp.com",
+  projectId: "placement-project-ff996",
+  storageBucket: "placement-project-ff996.appspot.com",
+  messagingSenderId: "232563177968",
+  appId: "1:232563177968:web:ae8d83bccbeee214c3c535"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const database = getDatabase(app);
+const auth = getAuth();
+
+document.getElementById('sign-in-form').addEventListener('submit', (e) => {
+  e.preventDefault();
+  
+  var email = document.getElementById('email').value;
+  var password = document.getElementById('password').value;
+
+  signInWithEmailAndPassword(auth, email, password)
+  .then((userCredential) => {
+    // Signed in 
+    const user = userCredential.user;
+    alert('User Signed In Successfully!');
+    window.location.href = 'index.html';
+    // You can redirect to another page or perform other actions here
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    alert('Error: ' + errorMessage);
+  });
+});
+
+    </script>
+
+  </body>
+</html>

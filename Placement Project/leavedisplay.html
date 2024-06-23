@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Leave Requests</title>
+  <link rel="stylesheet" href="leavedisplay.css">
+</head>
+<body>
+
+  <nav>
+    <div class="logo">
+      <p>DevLeaf</p>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Dashboard</a></li>
+      <li>
+        <a href="#" class="active">Employee</a>
+        <ul class="sub-menu">
+          <li><a href="payroll.html">Payroll</a></li>
+          <li><a href="attendance.html">Attendance</a></li>
+          <li><a href="leave.html" class="active">Leave</a></li>
+          <li><a href="loanrequest.html">Loan Request</a></li>
+        </ul>
+      </li>
+      <li><a href="feedback.html">Feedback</a></li>
+      <li><a href="profile.html">Profile</a></li>
+    </ul>
+    <div class="signin-button">
+      <button onclick="openAdminPanel()">Admin</button>
+    </div>
+  </nav>
+
+<div class="container" class="leave_req_box">
+  <h2>Leave Requests</h2>
+  <ul id="leave-list">
+    <!-- Leave requests will be dynamically added here -->
+  </ul>
+</div>
+
+<div class="container" class="approved_req">
+  <h2>Approved Messages</h2>
+  <ul id="approved-messages">
+    <!-- Approved messages will be dynamically added here -->
+  </ul>
+  <button class="reset" onclick="resetApprovedMessages()">Reset</button>
+</div>
+
+<script src="leavedisplay.js"></script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Payroll Management</title>
+     <link rel="stylesheet" href="payroll.css">
+</head>
+<body>
+    <nav>
+      <div class="logo">
+        <p>DevLeaf</p>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html">Dashboard</a></li>
+        <li>
+          <a href="#" class="active">Employee</a>
+          <ul class="sub-menu">
+            <li><a href="payroll.html" class="active">Payroll</a></li>
+            <li><a href="attendance.html">Attendance</a></li>
+            <li><a href="leave.html">Leave</a></li>
+            <li><a href="loanrequest.html">Loan Request</a></li>
+          </ul>
+        </li>
+        <li><a href="feedback.html">Feedback</a></li>
+        <li><a href="profile.html">Profile</a></li>
+      </ul>
+      <div class="signin-button">
+        <button>Admin</button>
+      </div>
+    </nav>
+
+    <div class="heading-part">
+      <h1>Employee Payroll Management</h1>
+      <div class="heading-input">
+        <input type="text" placeholder="Variable Pay" id="variablePay">
+        <input type="text" placeholder="Providence Percentage" id="pfPercentage">
+        <input type="text" placeholder="Basic Salary Percentage" id="BasicPercentage">
+        <input type="text" placeholder="HRA Percentage" id="hraPercentage">
+      </div>
+    </div>
+
+    <div class="payroll-inside">
+      <table>
+        <thead>
+          <tr>
+            <th>Employee ID</th>
+            <th>Employee Name</th>
+            <th>Given CTC</th>
+            <th>Variable Pay</th>
+            <th>HRA</th>
+            <th>TA</th>
+            <th>DA</th>
+            <th>Monthly CTC</th>
+            <th>Basic Salary</th>
+            <th>PF Amount</th>
+            <th>Net Salary</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Existing rows -->
+          <!-- <tr>
+            <td>41110996</td>
+            <td>Pratheesh G</td>
+            <td><input type="text" class="givenctc"></td>
+            <td class="vp"></td>
+            <td class="hra"></td>
+            <td><input type="text" class="ta"></td>
+            <td><input type="text" class="da"></td>
+            <td class="mctc"></td>
+            <td class="bs"></td>
+            <td class="pfam"></td>
+            <td class="nets"></td>
+          </tr> -->
+        </tbody>
+      </table>  
+    </div>
+    <div class="add-button">
+      <input type="text" id="regnum" placeholder="Employee ID">
+      <input type="text" id="empname" placeholder="Employee Name">
+      <button id="addEmployeeBtn">Add Employee</button>
+      <button id="saveBtn">Save</button>
+      <button id="clearBtn">Clear</button>
+    </div>
+
+    <script src="payroll.js"></script>
+</body>
+</html>

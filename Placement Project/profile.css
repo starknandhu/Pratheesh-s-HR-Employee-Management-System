@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+body {
+     font-family: -apple-system;
+     margin: 0;
+     padding: 0;
+   }
+   
+   nav {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     background-color: #393b3c;
+     padding: 0px 60px;
+   }
+   
+   .logo {
+     font-size: 25px;
+     font-family: "Bodoni Moda", serif;
+     font-weight: 800;
+     color: #3ad531;
+   }
+   
+   .nav-links {
+     display: flex;
+     padding: 0;
+     margin: 0;
+     list-style: none;
+     list-style-type: none;
+   }
+   
+   .nav-links li {
+     position: relative;
+   }
+   
+   .nav-links li a {
+     display: block;
+     padding: 20px;
+     padding: 10px 40px;
+     color: white;
+     text-decoration: none;
+     margin: 0 2px;
+   }
+   
+   .nav-links li a:hover {
+     background-color: #3ad531;
+     border-radius: 20px;
+   }
+   
+   .sub-menu {
+     display: none;
+     position: absolute;
+     top: 100%;
+     background-color: #202020;
+     text-decoration: none;
+     left: 0;
+   }
+   
+   .sub-menu li {
+     padding: 10px 0px;
+     text-decoration: none;
+     list-style: circle;
+   }
+   
+   .sub-menu li a {
+     text-decoration: none;
+     color: white;
+   }
+   
+   .sub-menu li a:hover {
+     background-color: #3ad531;
+     color: #101;
+     font-weight: 700;
+   }
+   
+   .nav-links li:hover .sub-menu {
+     display: block;
+   }
+   
+   .signin-button button {
+     background-color: #3ad531;
+     border-radius: 10px;
+     height: 40px;
+     width: 80px;
+     font-size: 18px;
+     border: 1px solid #3ad531;
+   }
+   
+   .signin-button button:hover {
+     background-color: #373a36;
+     color: #3ad531;
+   }
+
+   .active{
+    background-color: #3ad531;
+    border-radius: 20px;
+  }
+
+   
+   h1 {
+     font-size: 25px;
+     margin-top: 5px;
+     margin-left: 15px;
+   }
+
+   .content{
+    display: flex ;
+   }
+   
+   .side-info {
+     border: 1px solid black;
+     width: 500px;
+     margin: 0 15px 15px 15px;
+     height: 805px;
+     background-color: #393b3c;
+     display: flex;
+     justify-content: center;
+     text-align: center;
+     border-radius: 10px;
+   }
+   
+   .profile-header {
+     width: 400px;
+     padding-top: 30px;
+     color: #ccc;
+   }
+   
+   .profile-below-table {
+     padding-top: 5px;
+     border-top: 1px solid white;
+   }
+   
+   .profile-below {
+     display: table;
+   }
+   
+   .profile-header img {
+     width: 170px;
+     height: 170px;
+     border-radius: 50%;
+     border: 4px solid #3ad531;
+   }
+
+   .profile-below table {
+     width: 100%; 
+     border-spacing: 10px;
+   }
+   
+   .profile-below table th,
+   .profile-below table td {
+     width: 50%; 
+     text-align: left;
+     white-space: nowrap; 
+     overflow: hidden;
+     text-overflow: ellipsis; 
+   }
+   
+   .profile-below table th {
+     color: #3ad531; 
+   }
+   
+   .main-side{
+    border: 1px solid black;
+    margin: 0px 15px 15px 0px;
+    width: 1370px;
+    height: auto;
+    border-radius: 10px;
+   }
+
+   .main-side h2{
+    margin-left: 20px;
+    margin-top: 10px;
+   }
+
+   .main-content{
+    border: 1px solid black;
+    margin: 15px;
+    width: 1340px;
+    min-height: 730px;
+    display: table;
+   }
+
+   .main-content table {
+    width: 100%; 
+    border-collapse: collapse; 
+    
+}
+
+.main-content th,
+.main-content td {
+    padding: 12px; 
+    border: 1px solid #ddd; 
+    text-align: left; 
+    width: 50%;
+}
+
+.main-content th {
+    background-color: #f2f2f2; 
+    color: #333; 
+}
+
+.main-content tr:hover {
+    background-color: #ddd; 
+}
+
+
+.star-rating {
+  font-size: 24px;
+  color: #ffd700; 
+}
+
+.star {
+  cursor: pointer;
+}
+
+
+input[type="file"] {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  cursor: pointer;
+}
+
+input[type="file"]:hover {
+  background-color: #e9e9e9;
+}

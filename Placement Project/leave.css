@@ -1,0 +1,159 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+
+body {
+  background:linear-gradient(45deg,black,transparent);
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  font-family: -apple-system;
+  margin: 0;
+  padding: 0;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #393b3c;
+  padding: 0px 60px;
+}
+
+.logo {
+  font-size: 25px;
+  font-family: "Bodoni Moda", serif;
+  font-weight: 800;
+  color:#3ad531 ;
+}
+
+
+.nav-links {
+  display: flex;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  list-style-type: none;
+}
+
+.nav-links li {
+  position: relative;
+}
+
+.nav-links li a {
+  display: block;
+  padding: 20px;
+  padding: 10px 40px;
+  color: white;
+  text-decoration: none;
+  margin: 0 2px;  
+  border-radius: 20px;
+}
+
+.nav-links li a:hover {
+  background-color: #3ad531;
+  border-radius: 20px;
+}
+
+.sub-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  background-color: #202020;
+  text-decoration: none;
+  left: 0;
+}
+
+.sub-menu li {
+  padding: 10px 0px;
+  text-decoration: none;
+  list-style: circle;
+}
+
+.sub-menu li a {
+  text-decoration: none;
+  color: white;
+}
+
+.sub-menu li a:hover {
+  background-color: #3ad531;
+  color: #101;
+  font-weight: 700;
+}
+
+.nav-links li:hover .sub-menu {
+  display: block;
+}
+
+.signin-button button {
+  background-color: #3ad531;
+  border-radius: 10px;
+  height: 40px;
+  width: 80px;
+  font-size: 18px;
+  border: 1px solid #3ad531;
+}
+
+.signin-button button:hover{
+  background-color: #373a36;
+  color: #3ad531;
+}
+
+.active{
+  background-color: #3ad531;
+}
+
+.container{
+     height: 800px;
+     display: flex;
+     justify-content: space-around;
+     align-items: center;
+     margin-left: 100px;
+     margin-right: 100px;
+}
+
+.leave-request{
+     border-radius: 15px;
+     height: 200px;
+     width: 400px;
+     background-color: #373a36;
+     display: flex;
+     justify-content: center;
+     align-items:center;
+}
+
+.leave-approval{
+     border-radius: 15px;
+     height: 200px;
+     width: 400px;
+     background-color: #373a36;
+     display: flex;
+     justify-content: center;
+     align-items:center;
+}
+
+.leave-approval-history{
+     border-radius: 15px;
+     border-radius: 1px solid black;
+     height: 200px;
+     width: 400px;
+     background-color: #373a36;
+     display: flex;
+     justify-content: center;
+     align-items:center;
+}
+
+.container a{
+     text-decoration: none;
+     color: aliceblue;
+     font-size: 20px;
+}
+
+.container a :hover{
+     color: #3ad531;
+     font-size: 25px;
+     height: 220px;
+     width: 420px;
+}
+

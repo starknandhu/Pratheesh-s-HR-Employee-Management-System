@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Leave Management System</title>
+  <link rel="stylesheet" href="leaverequest.css">
+</head>
+<body>
+
+<nav>
+  <div class="logo">
+    <p>DevLeaf</p>
+  </div>
+  <ul class="nav-links">
+    <li><a href="index.html">Dashboard</a></li>
+    <li>
+      <a href="#" class="active">Employee</a>
+      <ul class="sub-menu">
+        <li><a href="payroll.html">Payroll</a></li>
+        <li><a href="attendance.html">Attendance</a></li>
+        <li><a href="leave.html" class="active">Leave</a></li>
+        <li><a href="loanrequest.html">Loan Request</a></li>
+      </ul>
+    </li>
+    <li><a href="feedback.html">Feedback</a></li>
+    <li><a href="profile.html">Profile</a></li>
+  </ul>
+  <div class="signin-button">
+    <button onclick="openAdminPanel()">Admin</button>
+  </div>
+</nav>
+
+<div class="container">
+     <h2>Request Leave</h2>
+     <form id="leave-form">
+       <label for="name">Name:</label><br>
+       <input type="text" id="name" name="name" required><br><br>
+       
+       <label for="register-number">Register Number:</label><br>
+       <input type="text" id="register-number" name="register-number" required><br><br>
+       
+       <label for="start-date">Start Date:</label>
+       <input type="date" id="start-date" name="start-date" required><br><br>
+       
+       <label for="end-date">End Date:</label>
+       <input type="date" id="end-date" name="end-date" required><br><br>
+       
+       <label for="reason">Reason:</label><br>
+       <textarea id="reason" name="reason" rows="4" cols="50" required></textarea><br><br>
+       
+       <button type="submit">Submit</button>
+     </form>
+   </div>
+   
+
+<script src="leaverequest.js"></script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Employee Management System</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+  <nav>
+    <div class="logo">
+      <p>DevLeaf</p>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Dashboard</a></li>
+      <li>
+        <a href="#">Employee</a>
+        <ul class="sub-menu">
+          <li><a href="payroll.html">Payroll</a></li>
+          <li><a href="attendance.html">Attendance</a></li>
+          <li><a href="leave.html">Leave</a></li>
+          <li><a href="loanrequest.html">Loan Request</a></li>
+        </ul>
+      </li>
+      <li><a href="feedback.html">Feedback</a></li>
+      <li><a href="profile.html">Profile</a></li>
+    </ul>
+    <div class="signin-button">
+      <button>Admin</button>
+    </div>
+  </nav>
+
+  <div class="top-area">
+    <h1>Employee Management System</h1>
+    <div class="box-outside">
+      <div class="box">
+        <input type="text" id="searchInput" placeholder="Search...">
+        <a href="#">
+            <i class="fa-solid fa-magnifying-glass fas"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+  
+
+  <table id="employeeTable">
+    <thead>
+      <tr>
+        <th>Employee ID</th>
+        <th id="firstNameHeader">First Name</th>
+        <th id="lastNameHeader">Last Name</th>
+        <th>Date of Birth</th>
+        <th>Gender</th>
+        <th>Contact Number</th>
+        <th>Email Address</th>
+        <!-- <th>Address</th> -->
+        <th>Date of Hire</th>
+        <th>Designation</th>
+        <th>Employee Status</th>
+        <th>Salary</th>
+        <th style="width: 100px;">Actions</th>
+      </tr>
+    </thead>
+    <tbody id="employeeBody">
+      <!-- Employee rows go here -->
+    </tbody>
+  </table>
+
+  <button class="empbutton" id="addEmployee">Add Employee</button>
+
+
+  <div id="employeeModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <input type="text" id="firstName" placeholder="First Name">
+      <input type="text" id="lastName" placeholder="Last Name">
+      <input type="text" id="dob" placeholder="Date of Birth (YYYY-MM-DD)">
+      <input type="text" id="gender" placeholder="Gender">
+      <input type="text" id="contactNumber" placeholder="Contact Number">
+      <input type="text" id="email" placeholder="Email Address">
+      <!-- <input type="text" id="address" placeholder="Address"> -->
+      <input type="text" id="hireDate" placeholder="Date of Hire (YYYY-MM-DD)">
+      <input type="text" id="designation" placeholder="Designation">
+      <input type="text" id="status" placeholder="Employee Status">
+      <input type="text" id="salary" placeholder="Salary">
+      <div class="savebutton">
+          <button id="saveEmployee">Save</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

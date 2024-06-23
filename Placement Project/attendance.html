@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance Management</title>
+    
+    <style>
+        body{
+            padding: 0;
+            margin: 0;
+            overflow: hidden;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #393b3c;
+            padding: 0px 60px;
+          }
+          
+          .logo {
+            font-size: 25px;
+            font-family: "Bodoni Moda", serif;
+            font-weight: 800;
+            color: #3ad531;
+          }
+          
+          .nav-links {
+            display: flex;
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            list-style-type: none;
+          }
+          
+          .nav-links li {
+            position: relative;
+          }
+          
+          .signin-button button {
+            background-color: #3ad531;
+            border-radius: 10px;
+            height: 40px;
+            width: 80px;
+            font-size: 18px; /* Increase font size */
+            border: 1px solid #3ad531;
+            text-align: center;
+            display: flex; /* Center text horizontally */
+            justify-content: center; /* Center text horizontally */
+            align-items: center; /* Center text vertically */
+        }
+        
+        .nav-links li a {
+            display: block;
+            padding: 20px;
+            padding: 10px 40px;
+            color: white;
+            text-decoration: none;
+            font-size: 20px; 
+            margin: 0 2px;
+        }
+        
+          
+          .nav-links li a:hover {
+            background-color: #3ad531;
+            border-radius: 20px;
+          }
+          
+          .sub-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            background-color: #202020;
+            text-decoration: none;
+            left: 0;
+          }
+          
+          .sub-menu li {
+            padding: 10px 0px;
+            text-decoration: none;
+            list-style: circle;
+          }
+          
+          .sub-menu li a {
+            text-decoration: none;
+            color: white;
+          }
+          
+          .sub-menu li a:hover {
+            background-color: #3ad531;
+            color: #101;
+            font-weight: 700;
+          }
+          
+          .nav-links li:hover .sub-menu {
+            display: block;
+          }          
+          
+          .signin-button button:hover {
+            background-color: #373a36;
+            color: #3ad531;
+          }
+
+     .inside {
+        font-family: Arial, sans-serif;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        background-size: cover;
+		background-position: center;
+		height: 100vh;
+        background:linear-gradient(45deg,black,transparent);
+     }
+     
+    .container 
+    {
+        padding: 20px;
+        margin: 150px;
+        border-radius: 0px;
+        background-color: white;
+        box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.4);
+        height: 505px;
+        width: 700px;
+        overflow-y: scroll;
+    }
+
+    .container:hover{
+        box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.4);
+    }
+
+    label{
+        font-size: 18px;
+    }
+     
+    button {
+        background-color: #393939;
+        color: #ccc;
+        font-weight: 600;
+        font-size: 16px;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+    
+    button:hover {
+        background-color: #3ad531;
+        color: #101010;
+    }
+    
+    hr {
+        border: none;
+        border-top: 1px solid #ccc;
+        margin: 20px 0;
+    }
+    #employee-name{
+        padding: 5px;
+        font-size: 18px;
+    }
+    select{
+        margin-left: 82px;
+        padding: 5px;
+        font-size: 15px;
+    }
+    
+
+    #attendance-list li{
+        padding-bottom: 10px;
+    }
+
+    .active{
+        background-color: #3ad531;
+        border-radius: 20px;
+   }
+   
+
+    
+    
+     
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">
+          <p>DevLeaf</p>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Dashboard</a></li>
+            <li>
+                <a href="#" class="active">Employee</a>
+                <ul class="sub-menu">
+                    <li><a href="payroll.html">Payroll</a></li>
+                    <li><a href="attendance.html" class="active">Attendance</a></li>
+                    <li><a href="leave.html">Leave</a></li>
+                    <li><a href="loanrequest.html">Loan Request</a></li>
+                </ul>
+            </li>
+            <li><a href="feedback.html">Feedback</a></li>
+            <li><a href="profile.html">Profile</a></li>
+        </ul>
+        <div class="signin-button">
+          <button>Admin</button>
+        </div>
+      </nav>
+    <div class="inside">
+        <div class="container">
+            <h1>Attendance Management</h1>
+            <form id="attendance-form">
+                <label for="employee-name">Employee Name:</label>
+                <input type="text" id="employee-name" name="employee-name" required>
+                <br>
+                <br>
+                <label for="status">Status:</label>
+                <select id="status" name="status" required>
+                    <option value="present">Present</option>
+                    <option value="absent">Absent</option>
+                </select>
+                <br>
+                <br>
+                <button type="submit">Submit</button>
+            </form>
+            <hr>
+            <h2>Attendance Records</h2>
+            <button onclick="resetAttendanceRecords()">Reset Attendance Records</button>
+         <ul id="attendance-list"></ul>
+        </div>
+    </div>
+    <script type="text/javascript">
+     const form = document.getElementById('attendance-form');
+     const employeeName = document.getElementById('employee-name');
+     const status = document.getElementById('status');
+     const attendanceList = document.getElementById('attendance-list');
+     
+     let attendanceRecords = [];
+     
+     form.addEventListener('submit', (e) => {
+         e.preventDefault();
+         if (!employeeName.value || !status.value) return;
+     
+         const attendanceRecord = {
+             employeeName: employeeName.value,
+             status: status.value,
+             date: new Date().toLocaleDateString(),
+             time: new Date().toLocaleTimeString() 
+         };
+     
+         attendanceRecords.push(attendanceRecord);
+         saveAttendanceRecords();
+     
+         employeeName.value = '';
+         status.value = 'present';
+     
+         displayAttendanceRecords(attendanceRecords);
+     });
+     
+     function displayAttendanceRecords(attendanceRecords) {
+         attendanceList.innerHTML = '';
+         attendanceRecords.forEach((record) => {
+             const li = document.createElement('li');
+             li.innerHTML = `
+                 <strong>${record.employeeName}</strong> - ${record.status} - ${record.date} - ${record.time}
+             `;
+             attendanceList.appendChild(li);
+         });
+     }
+     
+     
+     
+     function resetAttendanceRecords() {
+         attendanceRecords = [];
+         saveAttendanceRecords();
+         displayAttendanceRecords(attendanceRecords);
+     }
+     
+     function saveAttendanceRecords() {
+         localStorage.setItem('attendanceRecords', JSON.stringify(attendanceRecords));
+         displayAttendanceRecords(attendanceRecords);
+     }
+     
+     function loadAttendanceRecords() {
+         const storedRecords = localStorage.getItem('attendanceRecords');
+         if (storedRecords) {
+             attendanceRecords = JSON.parse(storedRecords);
+         }
+         displayAttendanceRecords(attendanceRecords);
+     }
+     
+     loadAttendanceRecords();
+    </script>
+</body>
+</html>
